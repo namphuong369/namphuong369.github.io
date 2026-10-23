@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flag Race Uploader</title>
+<title>Flag Race League Tools</title>
 <style>
   :root { --bg:#fff; --fg:#1a1a1a; --muted:#5f6570; --line:#e3e6ea; --accent:#0b62d6; }
   @media (prefers-color-scheme: dark) {
@@ -29,41 +29,53 @@
 </head>
 <body>
 <main>
-  <h1>Flag Race Uploader</h1>
-  <p class="sub">A personal command-line tool that publishes finished Shorts to its
-     operator's own YouTube channel, Flag Race League.</p>
+  <h1>Flag Race League Tools</h1>
+  <p class="sub">Personal command-line tools that publish finished Shorts to their operator's
+     own YouTube channel and Facebook Page, Flag Race League (@flagraceleague).</p>
 
   <h2>What it does</h2>
-  <p>Flag Race Uploader is a small script run from a terminal on the operator's computer.
-     The operator drops finished video files into a local folder. The tool reads each
-     file and the notes kept alongside it, writes the title, description and tags, picks
-     the next free publishing slot, and uploads the video to the operator's own YouTube
-     channel through the YouTube Data API v3 as a scheduled video.</p>
+  <p>The tools are small scripts run from a terminal on the operator's computer. The operator
+     drops finished video files into a local folder. The tools read each file and the notes
+     kept alongside it, write the title, description, caption and tags, pick the next free
+     publishing slot, and publish the video as a scheduled video on the operator's own YouTube
+     channel (YouTube Data API v3) and as a scheduled Reel on the operator's own Facebook Page
+     (Facebook Graph API), then post the Page's own comment with the link to the YouTube
+     video.</p>
 
   <h2>Who it is for</h2>
-  <p>One person: the operator who installs it and connects their own channel. It is not a
-     hosted service, it has no user accounts, and it does not act on behalf of anyone other
-     than the Google account that authorised it.</p>
+  <p>One person: the operator who installs it and connects their own channel and Page. It is
+     not a hosted service, it has no user accounts, and it does not act on behalf of anyone
+     other than the Google account and Facebook Page that authorised it.</p>
 
   <h2>What it asks permission for</h2>
+  <p>On Google:</p>
   <ul>
     <li><code>youtube.upload</code>: to upload videos and set their thumbnails on the
-        channel of the account that signed in. This is the main purpose of the tool.</li>
+        channel of the account that signed in.</li>
     <li><code>youtube.readonly</code>: to read back the channel's name, its list of
         uploads and their public statistics, so the operator can confirm the right channel
         is connected and avoid uploading the same video twice.</li>
     <li><code>youtube.force-ssl</code>: to manage the operator's own uploads after they
         are created: change the scheduled publishing time, add videos to the channel's
-        playlists, post the channel's own first comment under a new video, reply to
-        comments when the operator types a reply, and update the channel description and
-        keywords when the operator asks for it.</li>
+        playlists, post the channel's own first comment, reply to comments, and update the
+        channel description and keywords when the operator asks for it.</li>
   </ul>
-  <p>It does not request, and cannot use, any other Google data.</p>
+  <p>On Facebook (Meta app <i>Flag Race League Tools</i>, one Page only):</p>
+  <ul>
+    <li><code>pages_manage_posts</code>, <code>publish_video</code>: to publish and
+        schedule Reels, videos, photos and text posts on the operator's own Page.</li>
+    <li><code>pages_read_engagement</code>, <code>pages_read_user_content</code>,
+        <code>pages_show_list</code>: to read the Page's own posts and their status, so
+        nothing is published twice.</li>
+    <li><code>pages_manage_engagement</code>: to post comments as the Page under its own
+        posts.</li>
+  </ul>
+  <p>It does not request, and cannot use, any other Google or Facebook data.</p>
 
   <h2>Where it runs</h2>
   <p>Entirely on the operator's own computer. There is no server, no database and no third
-     party in the path. The only network connections it makes are to Google's own API
-     endpoints.</p>
+     party in the path. The only network connections it makes are to Google's and Meta's
+     own API endpoints.</p>
 
   <footer>
     <a href="privacy.html">Privacy policy</a>
