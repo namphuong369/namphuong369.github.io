@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night Drive Remix Tools — Terms of Service</title>
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5f6570; --line:#e3e6ea; --accent:#0b62d6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161a; --fg:#e8eaed; --muted:#9aa2ad; --line:#2a2f36; --accent:#6ea8fe; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:3rem 1.25rem 4rem; }
+  h1 { font-size:1.7rem; margin:0 0 .3rem; letter-spacing:-.01em; }
+  .sub { color:var(--muted); margin:0 0 2.5rem; font-size:.92rem; }
+  h2 { font-size:1.05rem; margin:2.25rem 0 .6rem; }
+  ul { padding-left:1.15rem; }
+  li { margin:.35rem 0; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
+           color:var(--muted); font-size:.9rem; }
+  footer a { margin-right:1.25rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Terms of Service</h1>
+  <p class="sub">Night Drive Remix Tools · last updated 30 October 2026</p>
+
+  <p>Night Drive Remix Tools is a set of personal command-line tools that publish video
+     files to the YouTube channel of the person who runs them and manage that channel's own
+     playlists, comments and branding. These terms apply to anyone who runs them.</p>
+
+  <h2>No warranty</h2>
+  <p>Night Drive Remix Tools is supplied without warranty of any kind, express or implied,
+     including fitness for a particular purpose. It is a personal utility, not a product, and
+     it may stop working whenever Google changes its APIs.</p>
+
+  <h2>What it does on your behalf</h2>
+  <p>Once you sign in, the tool acts as you on the YouTube channel you connect. It publishes
+     the files you place in its folder with the text written for them, at the times it
+     computes, adds them to playlists, posts comments as the channel, and changes the
+     channel's description, keywords, banner and watermark when you run those commands.
+     You are responsible for:</p>
+  <ul>
+    <li>owning or having the rights to every video, piece of music and image you publish
+        through it;</li>
+    <li>complying with the <a href="https://www.youtube.com/t/terms">YouTube Terms of
+        Service</a>, the YouTube Community Guidelines and the
+        <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">YouTube
+        API Services Terms of Service</a>;</li>
+    <li>reviewing the titles, descriptions, tags and comments the tool writes before they
+        go live, and correcting anything you do not want published.</li>
+  </ul>
+  <p>Anything the tool publishes is published for real: once a video or comment is on
+     YouTube it has an ID and a history, and the only way to undo it is to delete it. Check
+     the dry-run output before letting the scheduled job run.</p>
+
+  <h2>Quotas and limits set by Google</h2>
+  <p>Google limits how many API calls a project may make per day and how many videos a
+     channel may upload. The tool counts its own usage and stops when the limit is near, but
+     it cannot raise those limits and is not responsible for uploads that Google or YouTube
+     refuses, delays, removes or locks as private.</p>
+
+  <h2>Liability</h2>
+  <p>To the extent permitted by law, the operator of these tools is not liable for lost
+     videos, duplicated uploads, copyright claims or strikes against your channel,
+     suspension of your channel or Google account, or any other loss arising from running
+     the tools. You run them at your own risk.</p>
+
+  <h2>Ending use</h2>
+  <p>Stop using the tools at any time by deleting their folder and revoking the application
+     at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+     Videos and comments already published stay on YouTube until you delete them there.</p>
+
+  <h2>Changes</h2>
+  <p>If these terms change, the revised version is published on this page with a new date.</p>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+</main>
+</body>
+</html>

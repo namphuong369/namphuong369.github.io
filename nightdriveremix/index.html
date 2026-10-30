@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night Drive Remix Tools</title>
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5f6570; --line:#e3e6ea; --accent:#0b62d6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161a; --fg:#e8eaed; --muted:#9aa2ad; --line:#2a2f36; --accent:#6ea8fe; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:3rem 1.25rem 4rem; }
+  h1 { font-size:1.7rem; margin:0 0 .3rem; letter-spacing:-.01em; }
+  .sub { color:var(--muted); margin:0 0 2.5rem; font-size:.92rem; }
+  h2 { font-size:1.05rem; margin:2.25rem 0 .6rem; }
+  ul { padding-left:1.15rem; }
+  li { margin:.35rem 0; }
+  code { background:rgba(127,127,127,.14); padding:.1em .35em; border-radius:3px;
+         font:13px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
+           color:var(--muted); font-size:.9rem; }
+  footer a { margin-right:1.25rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Night Drive Remix Tools</h1>
+  <p class="sub">Personal command-line tools that publish finished music videos to their
+     operator's own YouTube channel, Night Drive Remix (@nightdriveremix).</p>
+
+  <h2>What it does</h2>
+  <p>The tools are small scripts run from a terminal on the operator's computer. The operator
+     drops finished video files into a local folder together with a short note (song name,
+     timeline). The tools read each file and its note, write the title, description, tags and
+     the channel's own first comment, pick the next free publishing slot, and publish the video
+     as a scheduled video on the operator's own YouTube channel through the YouTube Data API v3.
+     Other commands add the video to the channel's playlists, set the thumbnail, update the
+     channel's banner, watermark, description and keywords, list the channel's own statistics,
+     and post or reply to comments as the channel.</p>
+
+  <h2>Who it is for</h2>
+  <p>One person: the operator who installs it and connects their own channel. It is not a
+     hosted service, it has no user accounts, and it does not act on behalf of anyone other
+     than the Google account that authorised it.</p>
+
+  <h2>What it asks permission for</h2>
+  <ul>
+    <li><code>youtube.upload</code>: to upload videos, set their thumbnails, and upload the
+        channel banner and watermark on the channel of the account that signed in.</li>
+    <li><code>youtube.readonly</code>: to read back the channel's name, its list of
+        uploads and their public statistics, so the operator can confirm the right channel
+        is connected and avoid uploading the same video twice.</li>
+    <li><code>youtube.force-ssl</code>: to manage the operator's own uploads after they
+        are created: change the scheduled publishing time, add videos to the channel's
+        playlists, post the channel's own first comment, reply to comments, and update the
+        channel description, keywords, banner and watermark when the operator asks for it.</li>
+  </ul>
+  <p>It does not request, and cannot use, any other Google data.</p>
+
+  <h2>Where it runs</h2>
+  <p>Entirely on the operator's own computer. There is no server, no database and no
+     third-party service in the path. Credentials and the publishing record are plain local
+     files. Network traffic goes only to Google's own API endpoints.</p>
+
+  <h2>Source</h2>
+  <p>The scripts live in a private repository of the operator's GitHub account,
+     <a href="https://github.com/namphuong369">github.com/namphuong369</a>.</p>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="https://www.youtube.com/@nightdriveremix">YouTube channel</a>
+  </footer>
+</main>
+</body>
+</html>
